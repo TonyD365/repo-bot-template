@@ -49,7 +49,7 @@ jobs:
         with:
           deno-version: 2.9.8
       - run: deno fmt --check
-      - run: deno check index.ts config.ts assistant_test.ts bots_test.ts logic_test.ts
+      - run: deno check index.ts actions.ts route.ts config.ts assistant_test.ts bots_test.ts logic_test.ts
       - run: deno test --allow-env --no-prompt .
       - run: deno audit
 

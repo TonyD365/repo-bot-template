@@ -35,7 +35,17 @@ GitHub ── signed webhook ──▶ Supabase Edge Function ── GitHub API 
   kept in a locked issue in your repository.
 - Shadow mode: until you switch it on, it only logs what it would write.
 
-## Set up (about 30 minutes)
+## Choose where the bot runs
+
+- **Supabase (recommended):** a free Edge Function that GitHub calls by webhook. Fast, and it
+  uses no Actions runs. Set up below.
+- **GitHub Actions:** the same code, run as an Actions job for each event. No other account
+  needed, but every event uses a short Actions run, which can queue in busy repositories. See
+  [actions-bot/README.md](actions-bot/README.md).
+
+Both run the same code in `supabase/functions/repo-bot`, so they behave the same.
+
+## Set up the Supabase version (about 30 minutes)
 
 You need a GitHub account for the bot, and a Supabase account (the free plan needed no credit
 card when this was written; check before you sign up).
