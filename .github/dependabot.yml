@@ -1,0 +1,25 @@
+# Weekly dependency updates, each kind grouped into a single pull request.
+version: 2
+updates:
+  - package-ecosystem: github-actions
+    directory: /
+    schedule:
+      interval: weekly
+    cooldown:
+      default-days: 7
+    labels: [dependencies, ci]
+    groups:
+      actions:
+        patterns: ["*"]
+  - package-ecosystem: pip
+    # pyproject.toml, and the hash-pinned lock files CI installs from (scripts/lock.sh)
+    directories: ["/", "/requirements"]
+    schedule:
+      interval: weekly
+    cooldown:
+      default-days: 7
+    versioning-strategy: increase
+    labels: [dependencies]
+    groups:
+      python:
+        patterns: ["*"]

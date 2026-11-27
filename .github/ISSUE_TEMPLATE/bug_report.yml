@@ -1,0 +1,57 @@
+name: 🐞 Bug report
+description: Something does not work the way it should
+labels: [bug, triage]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        **Found a security problem?** Please do not open an issue: report it privately
+        (see SECURITY.md).
+  - type: textarea
+    id: what
+    attributes:
+      label: What happened?
+      description: What you did, what you expected, and what happened instead. A short code sample helps most.
+    validations:
+      required: true
+  - type: input
+    id: version
+    attributes:
+      label: Version
+      description: "e.g. `pip show example`"
+    validations:
+      required: true
+  - type: input
+    id: python
+    attributes:
+      label: Python version
+    validations:
+      required: true
+  - type: dropdown
+    id: os
+    attributes:
+      label: System
+      multiple: true
+      options:
+        - macOS
+        - Windows
+        - Linux
+        - Other
+    validations:
+      required: true
+  - type: dropdown
+    id: area
+    attributes:
+      label: Where is the problem?
+      options:
+        - Finding devices (discovery)
+        - Pairing
+        - Sending or receiving messages
+        - Key storage
+        - Installing
+        - Something else
+  - type: textarea
+    id: log
+    attributes:
+      label: Traceback or log output
+      render: text
